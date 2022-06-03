@@ -1,0 +1,151 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 28C256
+D Paged Parallel EEPROM 256Kb (32K x 8), DIP-28/SOIC-28
+K Parallel EEPROM 256Kb
+F http://ww1.microchip.com/downloads/en/DeviceDoc/doc0006.pdf
+$ENDCMP
+#
+$CMP 62256
+D 32Kx8 bit Low Power CMOS Static RAM, 55/70ns, DIP-28
+K RAM SRAM CMOS MEMORY
+F https://www.futurlec.com/Datasheet/Memory/62256.pdf
+$ENDCMP
+#
+$CMP 74HC563
+D 8-bit transparent latch 3-state inverting outputs
+K TTL DFF DFF8 LATCH 3State Inverting
+F 74xx/74hc573.pdf
+$ENDCMP
+#
+$CMP ADM232A
+D Dual RS232 driver/receiver, 5V supply, 200kb/s
+K rs232 uart transceiver line-driver
+F https://www.analog.com/media/en/technical-documentation/data-sheets/ADM222_232A_242.pdf
+$ENDCMP
+#
+$CMP AS6C4008
+D 512K x 8 Low Power CMOS RAM, DIP-32
+K RAM SRAM CMOS MEMORY
+F https://www.alliancememory.com/wp-content/uploads/pdf/AS6C4008.pdf
+$ENDCMP
+#
+$CMP ATF16V8B
+D High-performance EE PLD, 10 inputs, 8 I/O
+K EE PLD Programmable Logic Device
+F http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-0364-PLD-ATF16V8B-8BQ-8BQL-Datasheet.pdf
+$ENDCMP
+#
+$CMP ATF22V10C
+D High-performance EE PLD, 12 inputs, 10 I/O
+F http://ww1.microchip.com/downloads/en/DeviceDoc/doc0735.pdf
+$ENDCMP
+#
+$CMP ATMEGA328P_PS2_NES
+D IO MCU: I2C, Serial and PS/2 Controller
+$ENDCMP
+#
+$CMP ATX_PSU_CONN
+D Power to the Board ATX PWR CONN 1 BDLK 24 POS
+F http://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F1775099%7FG%7Fpdf%7FEnglish%7FENG_CD_1775099_G.pdf%7F1-1775099-3
+$ENDCMP
+#
+$CMP CY62256-70PC
+D 256K (32K x 8) Static RAM, 70ns, DIP-28
+K RAM SRAM CMOS MEMORY
+F https://ecee.colorado.edu/~mcclurel/Cypress_SRAM_CY62256.pdf
+$ENDCMP
+#
+$CMP HM62256BLP
+D 32,768-word × 8-bit High Speed CMOS Static RAM, 70ns, DIP-28
+K RAM SRAM CMOS MEMORY
+F https://web.mit.edu/6.115/www/document/62256.pdf
+$ENDCMP
+#
+$CMP ICL3232
+D 3.0V to 5.5V, Low-Power, up to 250kbps, True RS-232 Transceivers Using Four 0.1μF External Capacitors
+K rs232 uart transceiver line-driver
+F http://www.intersil.com/content/dam/Intersil/documents/icl3/icl3221-22-23-32-41-43.pdf
+$ENDCMP
+#
+$CMP ISA_CARD_CONNECTOR
+D Standard Card Edge Connectors 100 VRT 062DP
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F5530843%7FF8%7Fpdf%7FEnglish%7FENG_CD_5530843_F8.pdf%7F6-5530843-5
+$ENDCMP
+#
+$CMP ISA_CARD_CONNECTOR_16BIT
+D Standard Card Edge Connectors
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F5530843%7FF8%7Fpdf%7FEnglish%7FENG_CD_5530843_F8.pdf%7F6-5530843-5
+$ENDCMP
+#
+$CMP LM386
+D Low Voltage Audio Power Amplifier, DIP-8/SOIC-8/SSOP-8
+K single Power opamp
+F http://www.ti.com/lit/ds/symlink/lm386.pdf
+$ENDCMP
+#
+$CMP LM3915
+D Dot/Bar Display Driver
+F https://www.mouser.com/datasheet/2/405/lm3915-443929.pdf
+$ENDCMP
+#
+$CMP M48T02-70
+D ST 2KB non-volatile SRAM RTC compatible with the DS1642
+F https://www.st.com/resource/en/datasheet/m48t02.pdf
+$ENDCMP
+#
+$CMP MAX202
+D Dual RS232 driver/receiver, 5V supply, 120kb/s, 0C-70C
+K rs232 uart transceiver line-driver
+F http://www.ti.com/lit/ds/symlink/max202.pdf
+$ENDCMP
+#
+$CMP MAX232
+D Dual RS232 driver/receiver, 5V supply, 120kb/s, 0C-70C
+K rs232 uart transceiver line-driver
+F http://www.ti.com/lit/ds/symlink/max232.pdf
+$ENDCMP
+#
+$CMP MAX232I
+D Dual RS232 driver/receiver, 5V supply, 120kb/s, -40C-80C
+K rs232 uart transceiver line-driver
+F http://www.ti.com/lit/ds/symlink/max232.pdf
+$ENDCMP
+#
+$CMP MAX3232
+D 3.0V to 5.5V, Low-Power, up to 1Mbps, True RS-232 Transceivers Using Four 0.1μF External Capacitors
+K rs232 uart transceiver line-driver
+F https://datasheets.maximintegrated.com/en/ds/MAX3222-MAX3241.pdf
+$ENDCMP
+#
+$CMP R65C51
+D 65C51 ACIA
+K UART, 65xx
+$ENDCMP
+#
+$CMP SN76489AN
+D Digital complex sound generator
+$ENDCMP
+#
+$CMP W65C51N
+D W65C51N ACIA
+K UART, 65xx
+$ENDCMP
+#
+$CMP WD65C02
+D Western Digital Design Center - 65C02 8bit CPU
+K CPU, 65xx
+$ENDCMP
+#
+$CMP WD65C22
+D Western Digital Design Center - 65C22 CIA, Complex Interface Adapter
+K CIA, 65xx
+F https://www.westerndesigncenter.com/wdc/documentation/w65c22.pdf
+$ENDCMP
+#
+$CMP WD65C816
+D Western Digital Design Center - 65C816
+K CPU, 65816
+$ENDCMP
+#
+#End Doc Library

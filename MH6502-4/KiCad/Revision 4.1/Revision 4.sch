@@ -1,0 +1,657 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 11
+Title "MH6502-4"
+Date "2022-06-02"
+Rev "4.1"
+Comp "The Micro Hobbyist"
+Comment1 "Frédéric Segard"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 2900 2100 800  900 
+U 6229D10A
+F0 "CPU" 50
+F1 "CPU.sch" 50
+F2 "~NMI" I L 2900 2600 50 
+F3 "~IRQ" I L 2900 2500 50 
+F4 "RDY" I L 2900 2800 50 
+F5 "~RESET" I L 2900 2200 50 
+F6 "CLK" I L 2900 2300 50 
+F7 "SYNC" O R 3700 2700 50 
+F8 "R~W" O R 3700 2400 50 
+F9 "A[0..15]" O R 3700 2200 50 
+F10 "D[0..7]" B R 3700 2300 50 
+F11 "BE" I L 2900 2900 50 
+F12 "~ML" O R 3700 2800 50 
+F13 "~VP" O R 3700 2900 50 
+$EndSheet
+Wire Bus Line
+	5000 1200 4600 1200
+Wire Bus Line
+	5000 1300 4600 1300
+Text Label 4600 1200 0    50   ~ 0
+A[0..15]
+Text Label 4600 1300 0    50   ~ 0
+D[0..7]
+$Sheet
+S 5000 1100 800  1000
+U 62716C39
+F0 "Memory" 50
+F1 "Memory.sch" 50
+F2 "A[0..15]" I L 5000 1200 50 
+F3 "D[0..7]" B L 5000 1300 50 
+F4 "~NVRAM_CS" I L 5000 1700 50 
+F5 "~RAM_CS" I L 5000 1600 50 
+F6 "~ROM_CS" I L 5000 1500 50 
+F7 "~RD" I L 5000 1900 50 
+F8 "~WR" I L 5000 2000 50 
+$EndSheet
+Wire Bus Line
+	2900 4800 2500 4800
+Text Label 2500 4800 0    50   ~ 0
+A[0..15]
+Wire Wire Line
+	5000 1500 4600 1500
+Wire Wire Line
+	5000 1600 4600 1600
+Wire Wire Line
+	5000 1700 4600 1700
+Wire Wire Line
+	5000 1900 4600 1900
+Wire Wire Line
+	5000 2000 4600 2000
+Wire Wire Line
+	3750 4800 4150 4800
+Wire Wire Line
+	3750 4900 4150 4900
+Wire Wire Line
+	3750 5000 4150 5000
+Wire Wire Line
+	3700 3400 4100 3400
+Wire Wire Line
+	3700 3500 4100 3500
+Text Label 4100 3400 2    50   ~ 0
+~RD
+Text Label 4600 1900 0    50   ~ 0
+~RD
+Text Label 4100 3500 2    50   ~ 0
+~WR
+Text Label 4600 2000 0    50   ~ 0
+~WR
+Text Label 4150 4800 2    50   ~ 0
+~ROM
+Text Label 4600 1500 0    50   ~ 0
+~ROM
+Text Label 4150 4900 2    50   ~ 0
+~RAM
+Text Label 4600 1600 0    50   ~ 0
+~RAM
+Text Label 4150 5000 2    50   ~ 0
+~NVRAM
+Text Label 4600 1700 0    50   ~ 0
+~NVRAM
+Wire Wire Line
+	2900 4900 2500 4900
+Wire Wire Line
+	2900 5000 2500 5000
+Text Label 2500 4900 0    50   ~ 0
+R~W
+Text Label 2500 5000 0    50   ~ 0
+CLK
+Wire Wire Line
+	3700 1200 4100 1200
+Wire Wire Line
+	3700 1400 4100 1400
+Wire Wire Line
+	3700 1500 4100 1500
+Text Label 4100 1400 2    50   ~ 0
+CLK
+Text Label 4100 1500 2    50   ~ 0
+~CLK
+Text Label 4100 1200 2    50   ~ 0
+~RESET
+Wire Wire Line
+	3700 2400 4100 2400
+Wire Bus Line
+	3700 2200 4100 2200
+Wire Bus Line
+	3700 2300 4100 2300
+Text Label 4100 2200 2    50   ~ 0
+A[0..15]
+Text Label 4100 2300 2    50   ~ 0
+D[0..7]
+Text Label 4100 2400 2    50   ~ 0
+R~W
+Wire Wire Line
+	2900 2200 2500 2200
+Wire Wire Line
+	2900 2300 2500 2300
+Wire Wire Line
+	2900 2500 2500 2500
+Text Label 2500 2500 0    50   ~ 0
+~IRQ
+Text Label 2500 2300 0    50   ~ 0
+CLK
+Text Label 2500 2200 0    50   ~ 0
+~RESET
+Wire Wire Line
+	3700 3700 4100 3700
+Text Label 4100 3700 2    50   ~ 0
+~IRQ
+Wire Wire Line
+	3750 5200 4150 5200
+Text Label 4150 5200 2    50   ~ 0
+~IOREQ
+Wire Bus Line
+	5000 2500 4600 2500
+Wire Bus Line
+	5000 2600 4600 2600
+Text Label 4600 2500 0    50   ~ 0
+A[0..15]
+Text Label 4600 2600 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	5000 2800 4600 2800
+Wire Wire Line
+	5000 2900 4600 2900
+Text Label 4600 2900 0    50   ~ 0
+CLK
+Text Label 4600 2800 0    50   ~ 0
+~RESET
+Wire Wire Line
+	5000 3000 4600 3000
+Text Label 4600 3000 0    50   ~ 0
+R~W
+Wire Wire Line
+	5000 3200 4600 3200
+Text Label 4600 3200 0    50   ~ 0
+~ACIA1
+Wire Wire Line
+	2900 3600 2500 3600
+Text Label 2500 3600 0    50   ~ 0
+~IRQ1
+Wire Wire Line
+	5800 3200 6200 3200
+Text Label 6200 3200 2    50   ~ 0
+~IRQ5
+$Sheet
+S 2900 3300 800  1100
+U 624CB96A
+F0 "Interrupt" 50
+F1 "Interrupts.sch" 50
+F2 "~IRQ" O R 3700 3700 50 
+F3 "~IRQ1" I L 2900 3600 50 
+F4 "~IRQ2" I L 2900 3700 50 
+F5 "~IRQ3" I L 2900 3800 50 
+F6 "~IRQ4" I L 2900 3900 50 
+F7 "~IRQ5" I L 2900 4000 50 
+F8 "~IRQ6" I L 2900 4100 50 
+F9 "~IRQ7" I L 2900 4200 50 
+F10 "P_INT0" O R 3700 3800 50 
+F11 "P_INT1" O R 3700 3900 50 
+F12 "P_INT2" O R 3700 4000 50 
+F13 "P_INT3" O R 3700 4100 50 
+F14 "~RD" O R 3700 3400 50 
+F15 "~WR" O R 3700 3500 50 
+F16 "CLK" I L 2900 3400 50 
+F17 "~IRQ8" I L 2900 4300 50 
+F18 "R~W" I L 2900 3500 50 
+$EndSheet
+$Sheet
+S 2900 4700 850  2300
+U 61CDC8A2
+F0 "Logic Decode" 50
+F1 "MemoryMap.sch" 50
+F2 "A[0..15]" I L 2900 4800 50 
+F3 "R~W" I L 2900 4900 50 
+F4 "CLK" I L 2900 5000 50 
+F5 "~ROM_CS" O R 3750 4800 50 
+F6 "~NVRAM_CS" O R 3750 5000 50 
+F7 "~IOREQ" O R 3750 5200 50 
+F8 "~RAM_CS" O R 3750 4900 50 
+F9 "~ACIA1" O R 3750 5500 50 
+F10 "~VIA1" O R 3750 5400 50 
+F11 "~VDPCSR" O R 3750 5900 50 
+F12 "~VDPCSW" O R 3750 6000 50 
+F13 "BDIR1" O R 3750 6200 50 
+F14 "BC1" O R 3750 6300 50 
+F15 "BDIR2" O R 3750 6400 50 
+F16 "BC2" O R 3750 6500 50 
+F17 "BDIR3" O R 3750 6600 50 
+F18 "BC3" O R 3750 6700 50 
+F19 "~ACIA2" O R 3750 5600 50 
+F20 "BDIR4" O R 3750 6800 50 
+F21 "BC4" O R 3750 6900 50 
+$EndSheet
+Wire Wire Line
+	3750 5500 4150 5500
+Text Label 4150 5500 2    50   ~ 0
+~ACIA1
+Wire Bus Line
+	7100 4000 6700 4000
+Wire Bus Line
+	7100 4100 6700 4100
+Text Label 6700 4000 0    50   ~ 0
+A[0..15]
+Text Label 6700 4100 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	7100 4300 6700 4300
+Wire Wire Line
+	7100 4400 6700 4400
+Text Label 6700 4300 0    50   ~ 0
+CLK
+Text Label 6700 4400 0    50   ~ 0
+~CLK
+Wire Wire Line
+	7100 4600 6700 4600
+Text Label 6700 4600 0    50   ~ 0
+~RESET
+Wire Wire Line
+	7100 4700 6700 4700
+Text Label 6700 4700 0    50   ~ 0
+R~W
+Wire Wire Line
+	7100 4900 6700 4900
+Text Label 6700 4900 0    50   ~ 0
+~IOREQ
+Wire Wire Line
+	2900 2600 2500 2600
+Wire Wire Line
+	2900 2800 2500 2800
+Text Label 2500 2600 0    50   ~ 0
+~NMI
+Text Label 2500 2800 0    50   ~ 0
+RDY
+Wire Wire Line
+	7900 4200 8300 4200
+Wire Wire Line
+	7900 4000 8300 4000
+Text Label 8300 4200 2    50   ~ 0
+~NMI
+Text Label 8300 4000 2    50   ~ 0
+RDY
+Wire Wire Line
+	3700 2700 4100 2700
+Text Label 4100 2700 2    50   ~ 0
+SYNC
+Wire Wire Line
+	7100 5000 6700 5000
+Text Label 6700 5000 0    50   ~ 0
+SYNC
+Wire Bus Line
+	5000 3800 4600 3800
+Wire Bus Line
+	5000 3900 4600 3900
+Text Label 4600 3800 0    50   ~ 0
+A[0..15]
+Text Label 4600 3900 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	5000 4100 4600 4100
+Wire Wire Line
+	5000 4200 4600 4200
+Text Label 4600 4200 0    50   ~ 0
+CLK
+Text Label 4600 4100 0    50   ~ 0
+~RESET
+Wire Wire Line
+	5000 4300 4600 4300
+Text Label 4600 4300 0    50   ~ 0
+R~W
+Wire Wire Line
+	5000 4500 4600 4500
+Text Label 4600 4500 0    50   ~ 0
+~VIA1
+Wire Wire Line
+	5800 3800 6200 3800
+Text Label 6200 3800 2    50   ~ 0
+~IRQ2
+Wire Wire Line
+	2900 3900 2500 3900
+Text Label 2500 3900 0    50   ~ 0
+~IRQ4
+Wire Wire Line
+	3750 5400 4150 5400
+Text Label 4150 5400 2    50   ~ 0
+~VIA1
+$Sheet
+S 5000 3700 800  1400
+U 64B1B512
+F0 "VIA - Peripherals" 50
+F1 "VIA1_MCU.sch" 50
+F2 "~IRQ2" O R 5800 3800 50 
+F3 "~RESET" I L 5000 4100 50 
+F4 "CLK" I L 5000 4200 50 
+F5 "~VIA1" I L 5000 4500 50 
+F6 "R~W" I L 5000 4300 50 
+F7 "A[0..15]" I L 5000 3800 50 
+F8 "D[0..7]" I L 5000 3900 50 
+F9 "P_INT0" I L 5000 4700 50 
+F10 "P_INT1" I L 5000 4800 50 
+F11 "P_INT2" I L 5000 4900 50 
+F12 "P_INT3" I L 5000 5000 50 
+$EndSheet
+Wire Wire Line
+	2900 4000 2500 4000
+Wire Wire Line
+	2900 4100 2500 4100
+Wire Wire Line
+	2900 4200 2500 4200
+Text Label 2500 4000 0    50   ~ 0
+~IRQ5
+Text Label 2500 4100 0    50   ~ 0
+~IRQ6
+Text Label 2500 4200 0    50   ~ 0
+~IRQ7
+Wire Wire Line
+	7900 4600 8300 4600
+Text Label 8300 4600 2    50   ~ 0
+~IRQ4
+Wire Wire Line
+	2900 3700 2500 3700
+Wire Wire Line
+	2900 3800 2500 3800
+Text Label 2500 3700 0    50   ~ 0
+~IRQ2
+Text Label 2500 3800 0    50   ~ 0
+~IRQ3
+Text Label 8300 4500 2    50   ~ 0
+~IRQ3
+Wire Wire Line
+	8300 4500 7900 4500
+$Comp
+L Mechanical:Housing N1
+U 1 1 61E380FD
+P 1050 7550
+F 0 "N1" H 1203 7584 50  0000 L CNN
+F 1 "Housing" H 1203 7493 50  0000 L CNN
+F 2 "0_Fred's_Local_Library:18877_Housing" H 1100 7600 50  0001 C CNN
+F 3 "https://www.jameco.com/Jameco/Products/ProdDS/18877.pdf" H 1100 7600 50  0001 C CNN
+	1    1050 7550
+	1    0    0    -1  
+$EndComp
+$Sheet
+S 7100 3900 800  1400
+U 61DA6806
+F0 "Bus" 50
+F1 "Bus.sch" 50
+F2 "CLK" I L 7100 4300 50 
+F3 "~CLK" I L 7100 4400 50 
+F4 "~RESET" I L 7100 4600 50 
+F5 "R~W" I L 7100 4700 50 
+F6 "~IOREQ" I L 7100 4900 50 
+F7 "~NMI" O R 7900 4200 50 
+F8 "SYNC" I L 7100 5000 50 
+F9 "RDY" O R 7900 4000 50 
+F10 "~IRQ4" O R 7900 4600 50 
+F11 "~IRQ3" O R 7900 4500 50 
+F12 "A[0..15]" I L 7100 4000 50 
+F13 "D[0..7]" B L 7100 4100 50 
+F14 "~IRQ7" O R 7900 4700 50 
+F15 "~VP" I L 7100 5100 50 
+F16 "BE" O R 7900 5100 50 
+F17 "~ML" I L 7100 5200 50 
+$EndSheet
+$Sheet
+S 2900 1100 800  700 
+U 636AFA21
+F0 "Power, Reset & Clock" 50
+F1 "PowerReset.sch" 50
+F2 "~RESET" O R 3700 1200 50 
+F3 "CLK" I R 3700 1400 50 
+F4 "~CLK" O R 3700 1500 50 
+F5 "PSG_CLK" O R 3700 1700 50 
+$EndSheet
+$Sheet
+S 5000 2400 800  1000
+U 61E1D503
+F0 "ACIA" 50
+F1 "ACIA1+2.sch" 50
+F2 "A[0..15]" I L 5000 2500 50 
+F3 "CLK" I L 5000 2900 50 
+F4 "R~W" I L 5000 3000 50 
+F5 "D[0..7]" I L 5000 2600 50 
+F6 "~RESET" I L 5000 2800 50 
+F7 "~ACIA1" I L 5000 3200 50 
+F8 "~IRQ5" O R 5800 3200 50 
+F9 "~ACIA2" I L 5000 3300 50 
+F10 "~IRQ6" O R 5800 3300 50 
+$EndSheet
+Wire Wire Line
+	3750 5900 4150 5900
+Wire Wire Line
+	3750 6000 4150 6000
+Text Label 4150 5900 2    50   ~ 0
+~VDPCSR
+Text Label 4150 6000 2    50   ~ 0
+~VDPCSW
+$Sheet
+S 7100 1100 800  800 
+U 622E9471
+F0 "Video" 50
+F1 "Video.sch" 50
+F2 "~RESET" I L 7100 1800 50 
+F3 "~IRQ1" O R 7900 1200 50 
+F4 "~NMI" O R 7900 1300 50 
+F5 "A[0..15]" I L 7100 1200 50 
+F6 "~VDPCSR" I L 7100 1500 50 
+F7 "~VDPCSW" I L 7100 1600 50 
+F8 "D[0..7]" I L 7100 1300 50 
+$EndSheet
+Wire Bus Line
+	7100 1200 6700 1200
+Wire Bus Line
+	7100 1300 6700 1300
+Text Label 6700 1200 0    50   ~ 0
+A[0..15]
+Text Label 6700 1300 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	7900 1300 8300 1300
+Text Label 8300 1300 2    50   ~ 0
+~NMI
+Text Label 8300 1200 2    50   ~ 0
+~IRQ1
+Wire Wire Line
+	8300 1200 7900 1200
+Wire Wire Line
+	7100 1500 6700 1500
+Wire Wire Line
+	7100 1600 6700 1600
+Text Label 6700 1500 0    50   ~ 0
+~VDPCSR
+Text Label 6700 1600 0    50   ~ 0
+~VDPCSW
+Wire Wire Line
+	7100 1800 6700 1800
+Text Label 6700 1800 0    50   ~ 0
+~RESET
+$Sheet
+S 7100 2200 800  1400
+U 6230AAFE
+F0 "Sound" 50
+F1 "Sound.sch" 50
+F2 "D[0..7]" I L 7100 2300 50 
+F3 "~RESET" I L 7100 2500 50 
+F4 "BC1" I L 7100 2800 50 
+F5 "BDIR1" I L 7100 2900 50 
+F6 "PSG_CLK" I L 7100 2600 50 
+F7 "BC2" I L 7100 3000 50 
+F8 "BDIR2" I L 7100 3100 50 
+F9 "BC3" I L 7100 3200 50 
+F10 "BDIR3" I L 7100 3300 50 
+F11 "BC4" I L 7100 3400 50 
+F12 "BDIR4" I L 7100 3500 50 
+$EndSheet
+Wire Wire Line
+	7100 2500 6700 2500
+Wire Wire Line
+	7100 2600 6700 2600
+Text Label 6700 2600 0    50   ~ 0
+PSG_CLK
+Text Label 6700 2500 0    50   ~ 0
+~RESET
+Wire Bus Line
+	7100 2300 6700 2300
+Text Label 6700 2300 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	3750 6200 4150 6200
+Wire Wire Line
+	3750 6300 4150 6300
+Text Label 4150 6200 2    50   ~ 0
+BDIR1
+Text Label 4150 6300 2    50   ~ 0
+BC1
+Wire Wire Line
+	7100 2900 6700 2900
+Wire Wire Line
+	7100 2800 6700 2800
+Text Label 6700 2900 0    50   ~ 0
+BDIR1
+Text Label 6700 2800 0    50   ~ 0
+BC1
+Wire Wire Line
+	7900 4700 8300 4700
+Text Label 8300 4700 2    50   ~ 0
+~IRQ7
+Wire Wire Line
+	3700 1700 4100 1700
+Text Label 4100 1700 2    50   ~ 0
+PSG_CLK
+Wire Wire Line
+	3750 6400 4150 6400
+Wire Wire Line
+	3750 6500 4150 6500
+Text Label 4150 6400 2    50   ~ 0
+BDIR2
+Text Label 4150 6500 2    50   ~ 0
+BC2
+Wire Wire Line
+	7100 3100 6700 3100
+Wire Wire Line
+	7100 3000 6700 3000
+Text Label 6700 3100 0    50   ~ 0
+BDIR2
+Text Label 6700 3000 0    50   ~ 0
+BC2
+Wire Wire Line
+	7100 3300 6700 3300
+Wire Wire Line
+	7100 3200 6700 3200
+Text Label 6700 3300 0    50   ~ 0
+BDIR3
+Text Label 6700 3200 0    50   ~ 0
+BC3
+Wire Wire Line
+	3750 6600 4150 6600
+Wire Wire Line
+	3750 6700 4150 6700
+Text Label 4150 6600 2    50   ~ 0
+BDIR3
+Text Label 4150 6700 2    50   ~ 0
+BC3
+Wire Wire Line
+	3700 3800 4100 3800
+Wire Wire Line
+	3700 3900 4100 3900
+Wire Wire Line
+	3700 4000 4100 4000
+Wire Wire Line
+	3700 4100 4100 4100
+Text Label 4100 3800 2    50   ~ 0
+P_INT0
+Text Label 4100 3900 2    50   ~ 0
+P_INT1
+Text Label 4100 4000 2    50   ~ 0
+P_INT2
+Text Label 4100 4100 2    50   ~ 0
+P_INT3
+Wire Wire Line
+	5000 4700 4600 4700
+Wire Wire Line
+	5000 4800 4600 4800
+Wire Wire Line
+	5000 4900 4600 4900
+Wire Wire Line
+	5000 5000 4600 5000
+Text Label 4600 4700 0    50   ~ 0
+P_INT0
+Text Label 4600 4800 0    50   ~ 0
+P_INT1
+Text Label 4600 4900 0    50   ~ 0
+P_INT2
+Text Label 4600 5000 0    50   ~ 0
+P_INT3
+Wire Wire Line
+	7100 5100 6700 5100
+Wire Wire Line
+	7100 5200 6700 5200
+Wire Wire Line
+	7900 5100 8300 5100
+Text Label 6700 5100 0    50   ~ 0
+~VP
+Text Label 6700 5200 0    50   ~ 0
+~ML
+Text Label 8300 5100 2    50   ~ 0
+BE
+Wire Wire Line
+	2900 2900 2500 2900
+Text Label 2500 2900 0    50   ~ 0
+BE
+Wire Wire Line
+	3700 2800 4100 2800
+Text Label 4100 2800 2    50   ~ 0
+~ML
+Wire Wire Line
+	3700 2900 4100 2900
+Text Label 4100 2900 2    50   ~ 0
+~VP
+Wire Wire Line
+	5000 3300 4600 3300
+Text Label 4600 3300 0    50   ~ 0
+~ACIA2
+Wire Wire Line
+	5800 3300 6200 3300
+Text Label 6200 3300 2    50   ~ 0
+~IRQ6
+Wire Wire Line
+	2900 3400 2500 3400
+Wire Wire Line
+	2900 4300 2500 4300
+Text Label 2500 4300 0    50   ~ 0
+~IRQ8
+Text Label 2500 3400 0    50   ~ 0
+CLK
+Wire Wire Line
+	2900 3500 2500 3500
+Text Label 2500 3500 0    50   ~ 0
+R~W
+Wire Wire Line
+	3750 5600 4150 5600
+Text Label 4150 5600 2    50   ~ 0
+~ACIA2
+Wire Wire Line
+	3750 6800 4150 6800
+Wire Wire Line
+	3750 6900 4150 6900
+Text Label 4150 6800 2    50   ~ 0
+BDIR4
+Text Label 4150 6900 2    50   ~ 0
+BC4
+Wire Wire Line
+	7100 3500 6700 3500
+Wire Wire Line
+	7100 3400 6700 3400
+Text Label 6700 3500 0    50   ~ 0
+BDIR4
+Text Label 6700 3400 0    50   ~ 0
+BC4
+$EndSCHEMATC

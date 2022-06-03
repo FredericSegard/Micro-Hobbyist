@@ -1,0 +1,50 @@
+Name     Rev4_Int_Priority ;
+PartNo   ATF16V8B ;
+Date     05/08/2022 ;
+Revision 02 ;
+Designer Frederic Segard ;
+Company  Micro Hobbyist ;
+Assembly None ;
+Location U5 ;
+Device   G16V8 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = CLK;
+PIN 2   = I1;
+PIN 3   = I2;
+PIN 4   = I3;
+PIN 5   = I4;
+PIN 6   = I5;
+PIN 7   = I6;
+PIN 8   = I7;
+PIN 9   = I8;
+PIN 11  = RW;
+
+/* *************** OUTPUT PINS *********************/
+PIN 19  = IRQ;
+PIN 18  = A0;
+PIN 17  = A1;
+PIN 16  = A2;
+PIN 15  = A3;
+PIN 13  = !RD;
+PIN 12  = !WR;
+
+FIELD INPUT = [I8..I1];
+FIELD ADDRESS = [A3..A0];
+
+TABLE INPUT => ADDRESS {
+'b'11111111 => 'b'0000;
+'b'xxxxxxx0 => 'b'0001;
+'b'xxxxxx01 => 'b'0010;
+'b'xxxxx011 => 'b'0011;
+'b'xxxx0111 => 'b'0100;
+'b'xxx01111 => 'b'0101;
+'b'xx011111 => 'b'0110;
+'b'x0111111 => 'b'0111;
+'b'01111111 => 'b'1000;
+}
+
+IRQ = I1 & I2 & I3 & I4 & I5 & I6 & I7 & I8;
+
+RD = CLK & RW;
+WR = CLK & !RW;

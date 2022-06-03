@@ -1,0 +1,43 @@
+Name     Rev4_Mem;
+PartNo   ATF22V10C;
+Date     05/08/2022;
+Revision 4.1;
+Designer Frederic Segard;
+Company  The Micro Hobbyist;
+Assembly None;
+Location U6;
+Device   G22V10;
+
+PIN 1  = CLK;
+PIN 2  = A15;
+PIN 3  = A14;
+PIN 4  = A13;
+PIN 5  = A12;
+PIN 6  = A11;
+PIN 7  = A10;
+PIN 8  = A9;
+PIN 9  = A8;
+PIN 10 = A7;
+PIN 11 = A6;
+PIN 13 = A5;
+PIN 14 = A4;
+PIN 15 = A3;
+PIN 16 = A2;
+
+PIN 23 = !ROMCS;
+PIN 22 = !NVRAMCS;
+PIN 21 = !IOREQ;
+PIN 20 = !RAMCS;
+PIN 19 = !VIA1;
+PIN 18 = !ACIA1;
+PIN 17 = !ACIA2;
+
+FIELD ADDRESS = [A15..A2];
+
+ROMCS   = ADDRESS:[8000..FFFF];
+NVRAMCS = ADDRESS:[7800..7FFF] & CLK;
+IOREQ   = ADDRESS:[7700..77FF];
+RAMCS   = ADDRESS:[0000..76FF] & CLK;
+VIA1    = ADDRESS:[7700..770F];
+ACIA1   = ADDRESS:[7710..7713];
+ACIA2   = ADDRESS:[7714..7717];

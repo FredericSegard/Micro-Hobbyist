@@ -1,0 +1,55 @@
+Name     Rev3_Int_Priority ;
+PartNo   ATF16V8B ;
+Date     10/28/2021 ;
+Revision 01 ;
+Designer Frederic Segard ;
+Company  Micro Hobbyist ;
+Assembly None ;
+Location  ;
+Device   G16V8 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1   = I0;
+PIN 2   = I1;
+PIN 3   = I2;
+PIN 4   = I3;
+PIN 5   = I4;
+PIN 6   = I5;
+PIN 7   = I6;
+PIN 8   = I7;
+PIN 9   = I8;
+PIN 11  = I9;
+PIN 12  = I10;
+PIN 13  = I11;
+PIN 14  = I12;
+
+/* *************** OUTPUT PINS *********************/
+PIN 19  = IRQ;
+PIN 18  = A0;
+PIN 17  = A1;
+PIN 16  = A2;
+PIN 15  = A3;
+
+
+FIELD INPUT = [I12..0];
+FIELD ADDRESS = [A3..0];
+
+TABLE INPUT => ADDRESS {
+'b'1111111111111 => 'b'0000;
+'b'xxxxxxxxxxxx0 => 'b'0001;
+'b'xxxxxxxxxxx01 => 'b'0010;
+'b'xxxxxxxxxx011 => 'b'0011;
+'b'xxxxxxxxx0111 => 'b'0100;
+'b'xxxxxxxx01111 => 'b'0101;
+'b'xxxxxxx011111 => 'b'0110;
+'b'xxxxxx0111111 => 'b'0111;
+'b'xxxxx01111111 => 'b'1000;
+'b'xxxx011111111 => 'b'1001;
+'b'xxx0111111111 => 'b'1010;
+'b'xx01111111111 => 'b'1011;
+'b'x011111111111 => 'b'1100;
+'b'0111111111111 => 'b'1101;
+}
+
+IRQ = I0 & I1 & I2 & I3 & I4 & I5 & I6 & I7 & I8 & I9 & I10 & I11 & I12;
+

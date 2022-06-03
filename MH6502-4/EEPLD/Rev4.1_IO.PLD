@@ -1,0 +1,53 @@
+Name     4_IO ;
+PartNo   ATF16V8B ;
+Date     05/08/2022 ;
+Revision 4.1 ;
+Designer Frederic Segard ;
+Company  The Micro Hobbyist ;
+Assembly MH6502-4 ;
+Location U7 ;
+Device   G22V10 ;
+
+/* *************** INPUT PINS ************************ */
+PIN  1   = CLK      ; /* Clock (PHI2)                  */ 
+PIN  2   = RW       ; /* Read/Write                    */ 
+PIN  3   = !IOREQ   ; /* IO ($7700-$77FF)              */ 
+PIN  4   = A7       ; /*                               */ 
+PIN  5   = A6       ; /*                               */ 
+PIN  6   = A5       ; /*                               */ 
+PIN  7   = A4       ; /*                               */ 
+PIN  8   = A3       ; /*                               */ 
+PIN  9   = A2       ; /*                               */ 
+PIN  10  = A1       ; /*                               */
+PIN  11  = A0       ; /*                               */
+
+/* *************** OUTPUT PINS *********************** */
+PIN  23  = !VDPCSR;   /* TMS9918A - Read               */
+PIN  22  = !VDPCSW;   /* TMS9918A - Write              */
+PIN  21  = BC1_1;     /* AY-3-8910 #1                  */ 
+PIN  20  = BDIR_1;    /* AY-3-8910 #1                  */ 
+PIN  19  = BC1_2;     /* AY-3-8910 #2                  */ 
+PIN  18  = BDIR_2;    /* AY-3-8910 #2                  */ 
+PIN  17  = BC1_3;     /* AY-3-8910 #3                  */ 
+PIN  16  = BDIR_3;    /* AY-3-8910 #3                  */ 
+PIN  15  = BC1_4;     /* AY-3-8910 #4                  */ 
+PIN  14  = BDIR_4;    /* AY-3-8910 #4                  */ 
+
+/* *************** EQUATIONS ************************* */
+FIELD ADDRESS = [A7..A0];
+
+/* *************************************************** */
+VDPCSR   = IOREQ & ADDRESS:[20..21] & CLK & RW;  /* 2 bytes */
+VDPCSW   = IOREQ & ADDRESS:[20..21] & CLK & !RW; /* 2 bytes */
+
+BDIR_1   = IOREQ & ADDRESS:[22..23] & CLK & !RW; /* 2 bytes */
+BC1_1    = IOREQ & ADDRESS:[22..23] & CLK & A0;  /* 2 bytes */
+
+BDIR_2   = IOREQ & ADDRESS:[24..25] & CLK & !RW; /* 2 bytes */
+BC1_2    = IOREQ & ADDRESS:[24..25] & CLK & A0;  /* 2 bytes */
+
+BDIR_3   = IOREQ & ADDRESS:[26..27] & CLK & !RW; /* 2 bytes */
+BC1_3    = IOREQ & ADDRESS:[26..27] & CLK & A0;  /* 2 bytes */
+
+BDIR_4   = IOREQ & ADDRESS:[28..29] & CLK & !RW; /* 2 bytes */
+BC1_4    = IOREQ & ADDRESS:[28..29] & CLK & A0;  /* 2 bytes */

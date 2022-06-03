@@ -1,0 +1,91 @@
+%SIGNAL
+PIN  16 =  A2 
+PIN  15 =  A3 
+PIN  14 =  A4 
+PIN  13 =  A5 
+PIN  11 =  A6 
+PIN  10 =  A7 
+PIN   9 =  A8 
+PIN   8 =  A9 
+PIN   7 =  A10 
+PIN   6 =  A11 
+PIN   5 =  A12 
+PIN   4 =  A13 
+PIN   3 =  A14 
+PIN   2 =  A15 
+PIN  18 = !ACIA1 
+PIN  17 = !ACIA2 
+PIN   1 =  CLK 
+PIN  21 = !IOREQ 
+PIN  22 = !NVRAMCS 
+PIN  20 = !RAMCS 
+PIN  23 = !ROMCS 
+PIN  19 = !VIA1 
+%END
+
+%FIELD
+FIELD ADDRESS = A15,A14,A13,A12,A11,A10,A9,A8,A7,A6,A5,A4,A3,A2
+%END
+
+%EQUATION
+ACIA1 =>
+    !A2 & !A3 & A4 & !A5 & !A6 & !A7 & A8 & A9 & A10 & !A11 & A12 & A13 & A14 & !A15
+
+ACIA2 =>
+    A2 & !A3 & A4 & !A5 & !A6 & !A7 & A8 & A9 & A10 & !A11 & A12 & A13 & A14 & !A15
+
+IOREQ =>
+    A8 & A9 & A10 & !A11 & A12 & A13 & A14 & !A15
+
+NVRAMCS =>
+    A11 & A12 & A13 & A14 & !A15 & CLK
+
+RAMCS =>
+    !A8 & A9 & A10 & !A11 & A12 & A13 & A14 & !A15 & CLK
+  # !A9 & A11 & A12 & !A13 & !A15 & CLK
+  # A9 & A10 & A12 & !A13 & !A15 & CLK
+  # A9 & !A10 & A11 & A12 & A13 & !A14 & !A15 & CLK
+  # !A9 & A11 & A12 & A13 & !A14 & !A15 & CLK
+  # !A9 & A10 & !A11 & A12 & !A15 & CLK
+  # A9 & A10 & A12 & A13 & !A14 & !A15 & CLK
+  # !A12 & !A15 & CLK
+  # !A10 & !A11 & A12 & !A15 & CLK
+  # A9 & !A10 & A11 & A12 & !A13 & !A15 & CLK
+
+ROMCS =>
+    A15
+
+VIA1 =>
+    !A4 & !A5 & !A6 & !A7 & A8 & A9 & A10 & !A11 & A12 & A13 & A14 & !A15
+
+A2.oe  =>
+    0 
+
+A3.oe  =>
+    0 
+
+A4.oe  =>
+    0 
+
+ACIA1.oe  =>
+    1 
+
+ACIA2.oe  =>
+    1 
+
+IOREQ.oe  =>
+    1 
+
+NVRAMCS.oe  =>
+    1 
+
+RAMCS.oe  =>
+    1 
+
+ROMCS.oe  =>
+    1 
+
+VIA1.oe  =>
+    1 
+
+%END

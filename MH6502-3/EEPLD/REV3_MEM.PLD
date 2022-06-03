@@ -1,0 +1,39 @@
+Name     Rev3_Mem;
+PartNo   ATF16V8B;
+Date     01/01/2022;
+Revision 3.4;
+Designer Frederic Segard;
+Company  The Micro Hobbyist;
+Assembly None;
+Location U16;
+Device   G16V8;
+
+PIN 1  = CLK;
+PIN 2  = RW;
+PIN 3  = A15;
+PIN 4  = A14;
+PIN 5  = A13;
+PIN 6  = A12;
+PIN 7  = A11;
+PIN 8  = A10;
+PIN 9  = A9;
+PIN 11 = A8;
+
+PIN 19 = !ROMCS;
+PIN 18 = !NVRAMCS;
+PIN 17 = !IOREQ;
+PIN 16 = !BANKCS;
+PIN 15 = !RAMCS;
+PIN 13 = !RD;
+PIN 12 = !WR;
+
+FIELD ADDRESS = [A15..A8];
+
+ROMCS   = ADDRESS:[8000..FFFF];
+NVRAMCS = ADDRESS:[7800..7FFF] & CLK;
+IOREQ   = ADDRESS:[7700..77FF];
+BANKCS  = ADDRESS:[5600..75FF] & CLK;
+RAMCS   = ADDRESS:[0000..55FF] & CLK;
+
+RD = CLK & RW;
+WR = CLK & !RW;

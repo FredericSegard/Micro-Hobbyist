@@ -1,0 +1,40 @@
+Name     Rev3_IO1 ;
+PartNo   ATF16V8B ;
+Date     1/26/2022 ;
+Revision 3.4 ;
+Designer Frederic Segard ;
+Company  The Micro Hobbyist ;
+Assembly None ;
+Location U17 ;
+Device   G16V8 ;
+
+/* *************** INPUT PINS *********************/
+PIN 1    = CLK                     ; /*                                 */ 
+PIN 2    = !IOREQ                  ; /*                                 */ 
+PIN 3    = A0                      ; /*                                 */ 
+PIN 4    = A1                      ; /*                                 */ 
+PIN 5    = A2                      ; /*                                 */ 
+PIN 6    = A3                      ; /*                                 */ 
+PIN 7    = A4                      ; /*                                 */ 
+PIN 8    = A5                      ; /*                                 */ 
+PIN 9    = A6                      ; /*                                 */ 
+PIN 11   = A7                      ; /*                                 */ 
+
+/* *************** OUTPUT PINS *********************/
+PIN 19    = !ACIA1                  ; /* Terminal                        */ 
+PIN 18    = !ACIA2                  ; /* Peripheral                      */ 
+PIN 17    = !ACIA3                  ; /* Serial TTL                      */ 
+PIN 15    = !P_INT_SEL              ; /* Priority interrupt              */ 
+PIN 14    = BANK_SEL                ; /* Bank select (6-bit)             */ 
+PIN 13    = !VIA1                   ; /*                                 */ 
+PIN 12    = !VIA2                   ; /*                                 */ 
+
+FIELD ADDRESS = [A7..A0];
+
+ACIA1     = ADDRESS:[7700..7703] & IOREQ;
+ACIA2     = ADDRESS:[7704..7707] & IOREQ;
+ACIA3     = ADDRESS:[7708..770B] & IOREQ;
+P_INT_SEL = ADDRESS:[770E] & IOREQ & CLK;
+BANK_SEL  = ADDRESS:[770F] & IOREQ & CLK;
+VIA1      = ADDRESS:[7710..771F] & IOREQ;
+VIA2      = ADDRESS:[7720..772F] & IOREQ;

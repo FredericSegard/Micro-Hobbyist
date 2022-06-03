@@ -1,0 +1,677 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 11
+Title "MH6502-3"
+Date "2022-01-22"
+Rev "3.4"
+Comp "The Micro Hobbyist"
+Comment1 "Frédéric Segard"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 1650 1050 800  700 
+U 636AFA21
+F0 "Power, Reset & Clock" 50
+F1 "PowerReset.sch" 50
+F2 "~RESET" O R 2450 1150 50 
+F3 "CLK" I R 2450 1350 50 
+F4 "~CLK" O R 2450 1450 50 
+F5 "HCLK" O R 2450 1650 50 
+$EndSheet
+$Sheet
+S 1600 2650 800  1200
+U 6229D10A
+F0 "CPU" 50
+F1 "CPU.sch" 50
+F2 "~NMI" I L 1600 3250 50 
+F3 "~IRQ" I L 1600 3150 50 
+F4 "RDY" I L 1600 3450 50 
+F5 "~RESET" I L 1600 2750 50 
+F6 "CLK" I L 1600 2850 50 
+F7 "SYNC" O R 2400 3250 50 
+F8 "R~W" O R 2400 2950 50 
+F9 "A[0..15]" O R 2400 2750 50 
+F10 "D[0..7]" B R 2400 2850 50 
+F11 "BE" I L 1600 3550 50 
+F12 "~ML" O R 2400 3450 50 
+F13 "~VP" O R 2400 3550 50 
+$EndSheet
+Wire Bus Line
+	3800 6000 3400 6000
+Wire Bus Line
+	3800 6100 3400 6100
+Text Label 3400 6000 0    50   ~ 0
+A[0..15]
+Text Label 3400 6100 0    50   ~ 0
+D[0..7]
+$Sheet
+S 3800 5900 800  1200
+U 62716C39
+F0 "Memory" 50
+F1 "Memory.sch" 50
+F2 "A[0..15]" I L 3800 6000 50 
+F3 "D[0..7]" B L 3800 6100 50 
+F4 "~NVRAM_CS" I L 3800 6500 50 
+F5 "~RAM_CS" I L 3800 6400 50 
+F6 "~ROM_CS" I L 3800 6300 50 
+F7 "~RD" I L 3800 6900 50 
+F8 "~WR" I L 3800 7000 50 
+F9 "~BANK_CS" I L 3800 6600 50 
+F10 "BANK_SEL" I L 3800 6700 50 
+$EndSheet
+Wire Bus Line
+	3800 1150 3400 1150
+Text Label 3400 1150 0    50   ~ 0
+A[0..15]
+Wire Wire Line
+	3800 6300 3400 6300
+Wire Wire Line
+	3800 6400 3400 6400
+Wire Wire Line
+	3800 6500 3400 6500
+Wire Wire Line
+	3800 6900 3400 6900
+Wire Wire Line
+	3800 7000 3400 7000
+Wire Wire Line
+	4600 1450 5000 1450
+Wire Wire Line
+	4600 1550 5000 1550
+Wire Wire Line
+	4600 1650 5000 1650
+Wire Wire Line
+	4600 1150 5000 1150
+Wire Wire Line
+	4600 1250 5000 1250
+Text Label 5000 1150 2    50   ~ 0
+~RD
+Text Label 3400 6900 0    50   ~ 0
+~RD
+Text Label 5000 1250 2    50   ~ 0
+~WR
+Text Label 3400 7000 0    50   ~ 0
+~WR
+Text Label 5000 1450 2    50   ~ 0
+~ROM
+Text Label 3400 6300 0    50   ~ 0
+~ROM
+Text Label 5000 1550 2    50   ~ 0
+~RAM
+Text Label 3400 6400 0    50   ~ 0
+~RAM
+Text Label 5000 1650 2    50   ~ 0
+~NVRAM
+Text Label 3400 6500 0    50   ~ 0
+~NVRAM
+Wire Wire Line
+	3800 1250 3400 1250
+Wire Wire Line
+	3800 1350 3400 1350
+Text Label 3400 1250 0    50   ~ 0
+R~W
+Text Label 3400 1350 0    50   ~ 0
+CLK
+Wire Wire Line
+	2450 1150 2850 1150
+Wire Wire Line
+	2450 1350 2850 1350
+Wire Wire Line
+	2450 1450 2850 1450
+Text Label 2850 1350 2    50   ~ 0
+CLK
+Text Label 2850 1450 2    50   ~ 0
+~CLK
+Text Label 2850 1150 2    50   ~ 0
+~RESET
+Wire Wire Line
+	2400 2950 2800 2950
+Wire Bus Line
+	2400 2750 2800 2750
+Wire Bus Line
+	2400 2850 2800 2850
+Text Label 2800 2750 2    50   ~ 0
+A[0..15]
+Text Label 2800 2850 2    50   ~ 0
+D[0..7]
+Text Label 2800 2950 2    50   ~ 0
+R~W
+Wire Wire Line
+	1600 2750 1200 2750
+Wire Wire Line
+	1600 2850 1200 2850
+Wire Wire Line
+	1600 3150 1200 3150
+Text Label 1200 3150 0    50   ~ 0
+~IRQ
+Text Label 1200 2850 0    50   ~ 0
+CLK
+Text Label 1200 2750 0    50   ~ 0
+~RESET
+Wire Wire Line
+	2400 5150 2800 5150
+Text Label 2800 5150 2    50   ~ 0
+~IRQ
+Wire Wire Line
+	4600 1850 5000 1850
+Text Label 5000 1850 2    50   ~ 0
+~IOREQ
+$Sheet
+S 6100 1050 800  1100
+U 61E1D503
+F0 "ACIA 1, 2 & 3" 50
+F1 "ACIA1+2.sch" 50
+F2 "A[0..15]" I L 6100 1150 50 
+F3 "CLK" I L 6100 1550 50 
+F4 "R~W" I L 6100 1650 50 
+F5 "~ACIA2" I L 6100 1950 50 
+F6 "D[0..7]" I L 6100 1250 50 
+F7 "~RESET" I L 6100 1450 50 
+F8 "~IRQ6" O R 6900 1950 50 
+F9 "~ACIA1" I L 6100 1850 50 
+F10 "~IRQ5" O R 6900 1850 50 
+F11 "ACLK" O R 6900 1650 50 
+F12 "~ACIA3" I L 6100 2050 50 
+F13 "~IRQ7" O R 6900 2050 50 
+$EndSheet
+Wire Bus Line
+	6100 1150 5700 1150
+Wire Bus Line
+	6100 1250 5700 1250
+Text Label 5700 1150 0    50   ~ 0
+A[0..15]
+Text Label 5700 1250 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	6100 1450 5700 1450
+Wire Wire Line
+	6100 1550 5700 1550
+Text Label 5700 1550 0    50   ~ 0
+CLK
+Text Label 5700 1450 0    50   ~ 0
+~RESET
+Wire Wire Line
+	6100 1650 5700 1650
+Text Label 5700 1650 0    50   ~ 0
+R~W
+Wire Wire Line
+	6100 1850 5700 1850
+Wire Wire Line
+	6100 1950 5700 1950
+Text Label 5700 1850 0    50   ~ 0
+~ACIA1
+Text Label 5700 1950 0    50   ~ 0
+~ACIA2
+Wire Wire Line
+	1600 4950 1200 4950
+Wire Wire Line
+	1600 5050 1200 5050
+Text Label 1200 4950 0    50   ~ 0
+~IRQ0
+Text Label 1200 5050 0    50   ~ 0
+~IRQ1
+Wire Wire Line
+	6900 1850 7300 1850
+Wire Wire Line
+	6900 1950 7300 1950
+Text Label 7300 1850 2    50   ~ 0
+~IRQ5
+Text Label 7300 1950 2    50   ~ 0
+~IRQ6
+$Sheet
+S 1600 4850 800  1700
+U 624CB96A
+F0 "Interrupt Handling" 50
+F1 "Interrupts.sch" 50
+F2 "~IRQ" O R 2400 5150 50 
+F3 "D[0..7]" B R 2400 4950 50 
+F4 "~IRQ0" I L 1600 4950 50 
+F5 "~IRQ1" I L 1600 5050 50 
+F6 "~IRQ2" I L 1600 5150 50 
+F7 "~IRQ3" I L 1600 5250 50 
+F8 "~IRQ4" I L 1600 5350 50 
+F9 "~IRQ5" I L 1600 5450 50 
+F10 "~IRQ6" I L 1600 5550 50 
+F11 "~IRQ7" I L 1600 5650 50 
+F12 "~IRQ8" I L 1600 5750 50 
+F13 "~IRQ9" I L 1600 5850 50 
+F14 "~IRQ10" I L 1600 5950 50 
+F15 "~IRQ11" I L 1600 6050 50 
+F16 "~IRQ12" I L 1600 6150 50 
+F17 "~P_INT_SEL" I L 1600 6350 50 
+F18 "CLK" I L 1600 6450 50 
+$EndSheet
+$Sheet
+S 3800 1050 800  2100
+U 61CDC8A2
+F0 "Logic Decode" 50
+F1 "MemoryMap.sch" 50
+F2 "A[0..15]" I L 3800 1150 50 
+F3 "R~W" I L 3800 1250 50 
+F4 "CLK" I L 3800 1350 50 
+F5 "~RD" O R 4600 1150 50 
+F6 "~WR" O R 4600 1250 50 
+F7 "~ROM_CS" O R 4600 1450 50 
+F8 "~NVRAM_CS" O R 4600 1650 50 
+F9 "~IOREQ" O R 4600 1850 50 
+F10 "~RAM_CS" O R 4600 1550 50 
+F11 "~ACIA1_CS" O R 4600 2050 50 
+F12 "~ACIA2_CS" O R 4600 2150 50 
+F13 "~ACIA3_CS" O R 4600 2250 50 
+F14 "~VIA1_CS" O R 4600 2450 50 
+F15 "~P_INT_SEL" O R 4600 2950 50 
+F16 "~BANK_CS" O R 4600 1750 50 
+F17 "BANK_SEL" O R 4600 3050 50 
+F18 "~VIA2_CS" O R 4600 2550 50 
+$EndSheet
+Wire Wire Line
+	4600 2050 5000 2050
+Wire Wire Line
+	4600 2150 5000 2150
+Text Label 5000 2050 2    50   ~ 0
+~ACIA1
+Text Label 5000 2150 2    50   ~ 0
+~ACIA2
+Wire Wire Line
+	5000 2950 4600 2950
+Text Label 5000 2950 2    50   ~ 0
+~P_INT_SEL
+Wire Wire Line
+	1200 6350 1600 6350
+Text Label 1200 6350 0    50   ~ 0
+~P_INT_SEL
+Wire Bus Line
+	2400 4950 2800 4950
+Text Label 2800 4950 2    50   ~ 0
+D[0..7]
+Wire Wire Line
+	6900 1650 7300 1650
+Text Label 7300 1650 2    50   ~ 0
+ACLK
+Wire Bus Line
+	8250 1150 7850 1150
+Wire Bus Line
+	8250 1250 7850 1250
+Text Label 7850 1150 0    50   ~ 0
+A[0..15]
+Text Label 7850 1250 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	1600 6450 1200 6450
+Text Label 1200 6450 0    50   ~ 0
+CLK
+Wire Wire Line
+	8250 1450 7850 1450
+Wire Wire Line
+	8250 1550 7850 1550
+Text Label 7850 1450 0    50   ~ 0
+CLK
+Text Label 7850 1550 0    50   ~ 0
+~CLK
+Wire Wire Line
+	8250 2050 7850 2050
+Text Label 7850 2050 0    50   ~ 0
+~RESET
+Wire Wire Line
+	8250 2250 7850 2250
+Wire Wire Line
+	8250 2350 7850 2350
+Text Label 7850 2250 0    50   ~ 0
+~RD
+Text Label 7850 2350 0    50   ~ 0
+~WR
+Wire Wire Line
+	8250 2150 7850 2150
+Text Label 7850 2150 0    50   ~ 0
+R~W
+Wire Wire Line
+	8250 1650 7850 1650
+Text Label 7850 1650 0    50   ~ 0
+ACLK
+Wire Wire Line
+	8250 2450 7850 2450
+Text Label 7850 2450 0    50   ~ 0
+~IOREQ
+Wire Wire Line
+	1600 3250 1200 3250
+Wire Wire Line
+	1600 3450 1200 3450
+Text Label 1200 3250 0    50   ~ 0
+~NMI
+Text Label 1200 3450 0    50   ~ 0
+RDY
+Wire Wire Line
+	9150 1450 9550 1450
+Wire Wire Line
+	9150 1150 9550 1150
+Text Label 9550 1450 2    50   ~ 0
+~NMI
+Text Label 9550 1150 2    50   ~ 0
+RDY
+Wire Wire Line
+	2400 3250 2800 3250
+Text Label 2800 3250 2    50   ~ 0
+SYNC
+Wire Wire Line
+	8250 2650 7850 2650
+Text Label 7850 2650 0    50   ~ 0
+SYNC
+Wire Wire Line
+	9150 2450 9550 2450
+Wire Wire Line
+	9150 2550 9550 2550
+Wire Wire Line
+	9150 2650 9550 2650
+Wire Wire Line
+	9150 2750 9550 2750
+Text Label 9550 2450 2    50   ~ 0
+~IRQ8
+Text Label 9550 2550 2    50   ~ 0
+~IRQ9
+Text Label 9550 2650 2    50   ~ 0
+~IRQ10
+Text Label 9550 2750 2    50   ~ 0
+~IRQ11
+Wire Wire Line
+	1600 5750 1200 5750
+Wire Wire Line
+	1600 5850 1200 5850
+Wire Wire Line
+	1600 5950 1200 5950
+Wire Wire Line
+	1600 6050 1200 6050
+Wire Wire Line
+	1600 6150 1200 6150
+Text Label 1200 5750 0    50   ~ 0
+~IRQ8
+Text Label 1200 5850 0    50   ~ 0
+~IRQ9
+Text Label 1200 5950 0    50   ~ 0
+~IRQ10
+Text Label 1200 6050 0    50   ~ 0
+~IRQ11
+Text Label 1200 6150 0    50   ~ 0
+~IRQ12
+Wire Bus Line
+	6100 3150 5700 3150
+Wire Bus Line
+	6100 3250 5700 3250
+Text Label 5700 3150 0    50   ~ 0
+A[0..15]
+Text Label 5700 3250 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	6100 3450 5700 3450
+Wire Wire Line
+	6100 3550 5700 3550
+Text Label 5700 3550 0    50   ~ 0
+CLK
+Text Label 5700 3450 0    50   ~ 0
+~RESET
+Wire Wire Line
+	6100 3650 5700 3650
+Text Label 5700 3650 0    50   ~ 0
+R~W
+Wire Wire Line
+	6100 3850 5700 3850
+Text Label 5700 3850 0    50   ~ 0
+~VIA1
+Wire Wire Line
+	6900 3150 7300 3150
+Text Label 7300 3150 2    50   ~ 0
+~IRQ2
+Wire Wire Line
+	1600 5350 1200 5350
+Text Label 1200 5350 0    50   ~ 0
+~IRQ4
+Wire Wire Line
+	4600 2450 5000 2450
+Text Label 5000 2450 2    50   ~ 0
+~VIA1
+$Sheet
+S 6100 3050 800  900 
+U 64B1B512
+F0 "VIA1 - Peripherals" 50
+F1 "VIA1_MCU.sch" 50
+F2 "~IRQ2" O R 6900 3150 50 
+F3 "~RESET" I L 6100 3450 50 
+F4 "CLK" I L 6100 3550 50 
+F5 "~VIA1" I L 6100 3850 50 
+F6 "R~W" I L 6100 3650 50 
+F7 "A[0..15]" I L 6100 3150 50 
+F8 "D[0..7]" I L 6100 3250 50 
+$EndSheet
+Wire Wire Line
+	1600 5450 1200 5450
+Wire Wire Line
+	1600 5550 1200 5550
+Wire Wire Line
+	1600 5650 1200 5650
+Text Label 1200 5450 0    50   ~ 0
+~IRQ5
+Text Label 1200 5550 0    50   ~ 0
+~IRQ6
+Text Label 1200 5650 0    50   ~ 0
+~IRQ7
+Wire Wire Line
+	9150 2050 9550 2050
+Text Label 9550 2050 2    50   ~ 0
+~IRQ4
+Wire Wire Line
+	1600 5150 1200 5150
+Wire Wire Line
+	1600 5250 1200 5250
+Text Label 1200 5150 0    50   ~ 0
+~IRQ2
+Text Label 1200 5250 0    50   ~ 0
+~IRQ3
+Text Label 9550 1650 2    50   ~ 0
+~IRQ0
+Text Label 9550 1750 2    50   ~ 0
+~IRQ1
+Text Label 9550 1950 2    50   ~ 0
+~IRQ3
+Wire Wire Line
+	9550 1650 9150 1650
+Wire Wire Line
+	9550 1750 9150 1750
+Wire Wire Line
+	9550 1950 9150 1950
+Wire Wire Line
+	6900 2050 7300 2050
+Text Label 7300 2050 2    50   ~ 0
+~IRQ7
+Wire Wire Line
+	6100 2050 5700 2050
+Text Label 5700 2050 0    50   ~ 0
+~ACIA3
+Wire Wire Line
+	4600 2250 5000 2250
+Text Label 5000 2250 2    50   ~ 0
+~ACIA3
+$Comp
+L Mechanical:Housing N1
+U 1 1 61E380FD
+P 1050 7550
+F 0 "N1" H 1203 7584 50  0000 L CNN
+F 1 "Housing" H 1203 7493 50  0000 L CNN
+F 2 "0_Fred's_Local_Library:18877_Housing" H 1100 7600 50  0001 C CNN
+F 3 "https://www.jameco.com/Jameco/Products/ProdDS/18877.pdf" H 1100 7600 50  0001 C CNN
+	1    1050 7550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 1750 5000 1750
+Text Label 5000 1750 2    50   ~ 0
+~BANK
+Wire Wire Line
+	5000 3050 4600 3050
+Text Label 5000 3050 2    50   ~ 0
+BANK_SEL
+Wire Wire Line
+	3400 6700 3800 6700
+Text Label 3400 6700 0    50   ~ 0
+BANK_SEL
+Wire Wire Line
+	3800 6600 3400 6600
+Text Label 3400 6600 0    50   ~ 0
+~BANK
+Wire Bus Line
+	6100 5100 5700 5100
+Wire Bus Line
+	6100 5200 5700 5200
+Text Label 5700 5100 0    50   ~ 0
+A[0..15]
+Text Label 5700 5200 0    50   ~ 0
+D[0..7]
+Wire Wire Line
+	6100 5600 5700 5600
+Text Label 5700 5600 0    50   ~ 0
+R~W
+Wire Wire Line
+	6100 5400 5700 5400
+Text Label 5700 5400 0    50   ~ 0
+~RESET
+Wire Wire Line
+	4600 2550 5000 2550
+Wire Wire Line
+	2850 1650 2450 1650
+Text Label 2850 1650 2    50   ~ 0
+HCLK
+Wire Wire Line
+	7850 1850 8250 1850
+Text Label 7850 1850 0    50   ~ 0
+HCLK
+$Sheet
+S 8250 1050 900  1900
+U 61DA6806
+F0 "Bus" 50
+F1 "Bus.sch" 50
+F2 "CLK" I L 8250 1450 50 
+F3 "~CLK" I L 8250 1550 50 
+F4 "~RESET" I L 8250 2050 50 
+F5 "R~W" I L 8250 2150 50 
+F6 "~RD" I L 8250 2250 50 
+F7 "~WR" I L 8250 2350 50 
+F8 "~IOREQ" I L 8250 2450 50 
+F9 "ACLK" I L 8250 1650 50 
+F10 "~NMI" O R 9150 1450 50 
+F11 "SYNC" I L 8250 2650 50 
+F12 "RDY" O R 9150 1150 50 
+F13 "~IRQ8" O R 9150 2450 50 
+F14 "~IRQ9" O R 9150 2550 50 
+F15 "~IRQ10" O R 9150 2650 50 
+F16 "~IRQ11" O R 9150 2750 50 
+F17 "~IRQ4" O R 9150 2050 50 
+F18 "~IRQ0" O R 9150 1650 50 
+F19 "~IRQ1" O R 9150 1750 50 
+F20 "~IRQ3" O R 9150 1950 50 
+F21 "A[0..15]" I L 8250 1150 50 
+F22 "D[0..7]" B L 8250 1250 50 
+F23 "HCLK" I L 8250 1850 50 
+F24 "BE" O R 9150 1250 50 
+F25 "~ML" I L 8250 2750 50 
+F26 "~VP" I L 8250 2850 50 
+$EndSheet
+Wire Wire Line
+	2400 3450 2800 3450
+Wire Wire Line
+	2400 3550 2800 3550
+Wire Wire Line
+	1600 3550 1200 3550
+Text Label 1200 3550 0    50   ~ 0
+BE
+Text Label 2800 3450 2    50   ~ 0
+~ML
+Text Label 2800 3550 2    50   ~ 0
+~VP
+Wire Wire Line
+	8250 2750 7850 2750
+Wire Wire Line
+	7850 2850 8250 2850
+Wire Wire Line
+	9150 1250 9550 1250
+Text Label 9550 1250 2    50   ~ 0
+BE
+Text Label 7850 2750 0    50   ~ 0
+~ML
+Text Label 7850 2850 0    50   ~ 0
+~VP
+Wire Wire Line
+	6100 5800 5700 5800
+$Sheet
+S 6100 5000 800  900 
+U 623996BE
+F0 "LCD" 50
+F1 "LCDs.sch" 50
+F2 "~RESET" I L 6100 5400 50 
+F3 "R~W" I L 6100 5600 50 
+F4 "A[0..15]" I L 6100 5100 50 
+F5 "D[0..7]" I L 6100 5200 50 
+F6 "~IRQ12" O R 6900 5100 50 
+F7 "CLK" I L 6100 5500 50 
+F8 "~VIA2" I L 6100 5800 50 
+$EndSheet
+Wire Wire Line
+	6100 5500 5700 5500
+Text Label 5700 5500 0    50   ~ 0
+CLK
+Text Label 5000 2550 2    50   ~ 0
+~VIA2
+Text Label 5700 5800 0    50   ~ 0
+~VIA2
+Wire Wire Line
+	6900 5100 7300 5100
+Text Label 7300 5100 2    50   ~ 0
+~IRQ12
+Wire Wire Line
+	3800 3750 3400 3750
+Wire Wire Line
+	3800 3850 3400 3850
+Text Label 3400 3750 0    50   ~ 0
+~ACIA1
+Text Label 3400 3850 0    50   ~ 0
+~ACIA2
+Wire Wire Line
+	3800 3950 3400 3950
+Text Label 3400 3950 0    50   ~ 0
+~ACIA3
+Wire Wire Line
+	3800 4050 3400 4050
+Text Label 3400 4050 0    50   ~ 0
+~VIA1
+Wire Wire Line
+	3800 4150 3400 4150
+Text Label 3400 4150 0    50   ~ 0
+~VIA2
+Wire Wire Line
+	3800 4550 3400 4550
+Text Label 3400 4550 0    50   ~ 0
+~IRQ
+Wire Wire Line
+	3800 4650 3400 4650
+Text Label 3400 4650 0    50   ~ 0
+~NMI
+Wire Wire Line
+	3800 4850 3400 4850
+Text Label 3400 4850 0    50   ~ 0
+CLK
+$Sheet
+S 3800 3650 800  1300
+U 61F9875D
+F0 "Blinkenlights" 50
+F1 "Blinken.sch" 50
+F2 "~ACIA1" I L 3800 3750 50 
+F3 "~ACIA2" I L 3800 3850 50 
+F4 "~ACIA3" I L 3800 3950 50 
+F5 "~VIA1" I L 3800 4050 50 
+F6 "~CLK" I L 3800 4850 50 
+F7 "~VIA2" I L 3800 4150 50 
+F8 "~IRQ" I L 3800 4550 50 
+F9 "~NMI" I L 3800 4650 50 
+$EndSheet
+$EndSCHEMATC

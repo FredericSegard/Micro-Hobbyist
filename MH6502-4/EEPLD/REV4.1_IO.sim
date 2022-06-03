@@ -1,0 +1,90 @@
+%SIGNAL
+PIN  11 =  A0 
+PIN  10 =  A1 
+PIN   9 =  A2 
+PIN   8 =  A3 
+PIN   7 =  A4 
+PIN   6 =  A5 
+PIN   5 =  A6 
+PIN   4 =  A7 
+PIN  21 =  BC1_1 
+PIN  19 =  BC1_2 
+PIN  17 =  BC1_3 
+PIN  15 =  BC1_4 
+PIN  20 =  BDIR_1 
+PIN  18 =  BDIR_2 
+PIN  16 =  BDIR_3 
+PIN  14 =  BDIR_4 
+PIN   1 =  CLK 
+PIN   3 = !IOREQ 
+PIN   2 =  RW 
+PIN  23 = !VDPCSR 
+PIN  22 = !VDPCSW 
+%END
+
+%FIELD
+FIELD ADDRESS = A7,A6,A5,A4,A3,A2,A1,A0
+%END
+
+%EQUATION
+BC1_1 =>
+    A0 & A1 & !A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ
+
+BC1_2 =>
+    A0 & !A1 & A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ
+
+BC1_3 =>
+    A0 & A1 & A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ
+
+BC1_4 =>
+    A0 & !A1 & !A2 & A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ
+
+BDIR_1 =>
+    A1 & !A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ & !RW
+
+BDIR_2 =>
+    !A1 & A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ & !RW
+
+BDIR_3 =>
+    A1 & A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ & !RW
+
+BDIR_4 =>
+    !A1 & !A2 & A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ & !RW
+
+VDPCSR =>
+    !A1 & !A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ & RW
+
+VDPCSW =>
+    !A1 & !A2 & !A3 & !A4 & A5 & !A6 & !A7 & CLK & !IOREQ & !RW
+
+BC1_1.oe  =>
+    1 
+
+BC1_2.oe  =>
+    1 
+
+BC1_3.oe  =>
+    1 
+
+BC1_4.oe  =>
+    1 
+
+BDIR_1.oe  =>
+    1 
+
+BDIR_2.oe  =>
+    1 
+
+BDIR_3.oe  =>
+    1 
+
+BDIR_4.oe  =>
+    1 
+
+VDPCSR.oe  =>
+    1 
+
+VDPCSW.oe  =>
+    1 
+
+%END
